@@ -40,6 +40,12 @@ function nextPage() {
   currentPage++;
   renderPage();
 }
+function prevPage() {
+  if (currentPage > 0) {
+    currentPage--;
+    renderPage();
+  }
+}
 
 function renderPage() {
   const { bg, html, music } = pages[currentPage];
@@ -53,4 +59,5 @@ function renderPage() {
 }
 
 renderPage();
+
 
