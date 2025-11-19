@@ -30,7 +30,7 @@ const pages = [
   },
   {
     bg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIDLoSjR_zAUHP259B4f6R_xTDOnp8S7t_0lNKvQ-cDse4WKMZ4fPJXtOwIIWNx67QsuA&usqp=CAU",
-    html: `<h1>Nosso Jantar</h1><p>Te espero para o nosso jantar especial — pensado com carinho, detalhe por detalhe. E é nesse momento só nosso que eu quero te entregar a última música dessa playlist...</p>`
+    html: `<h1>Nosso Jantar</h1><p>Te espero para o nosso jantar especial — pensado com carinho, detalhe por detalhe. E é nesse momento só nosso que eu quero te entregar a última música dessa playlist... </p>`
   }
 ];
 
@@ -39,14 +39,35 @@ let currentPage = 0;
 function nextPage() {
   currentPage++;
   renderPage();
+  setTimeout(() => {
+    const audio = document.querySelector("audio");
+    if (audio) audio.play().catch(() => {});
+  }, 300);
+}
+
+function prevPage() {
+  if (currentPage > 0) {
+    currentPage--;
+    renderPage();
+    setTimeout(() => {
+      const audio = document.querySelector("audio");
+      if (audio) audio.play().catch(() => {});
+    }, 300);
+  }
 }
 
 function renderPage() {
   const { bg, html, music } = pages[currentPage];
   document.body.style.backgroundImage = `url(${bg})`;
-  let audioTag = music ? `<audio autoplay controls><source src="${music}" type="audio/mpeg"></audio>` : '';
-  let nextBtn = (currentPage < pages.length - 1) ? `<button class='btn' onclick='nextPage()'>Próxima</button>` : '';
-  document.getElementById('page').innerHTML = html + audioTag + nextBtn;
+  let audioTag = music ? `<audio controls><source src="${music}" type="audio/mpeg"></audio>` : '';
+
+  let nextBtn = (currentPage < pages.length - 1)
+    ? `<button class='btn' onclick='nextPage()'>Próxima</button>` : '';
+
+  let backBtn = (currentPage > 0)
+    ? `<button class='btn' onclick='prevPage()' style='margin-right: 10px;'>Voltar</button>` : '';
+
+  document.getElementById('page').innerHTML = html + audioTag + `<div>${backBtn}${nextBtn}</div>`;
 }
 
 renderPage();
