@@ -30,7 +30,7 @@ const pages = [
   },
   {
     bg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIDLoSjR_zAUHP259B4f6R_xTDOnp8S7t_0lNKvQ-cDse4WKMZ4fPJXtOwIIWNx67QsuA&usqp=CAU",
-    html: `<h1>Nosso Jantar</h1><p>Te espero para o nosso jantar especial — pensado com carinho, detalhe por detalhe. E é nesse momento só nosso que eu quero te entregar a última música dessa playlist... aquela que vai marcar o início de um novo capítulo da nossa história.</p>`
+    html: `<h1>Nosso Jantar</h1><p>Te espero para o nosso jantar especial — pensado com carinho, detalhe por detalhe. E é nesse momento só nosso que eu quero te entregar a última música dessa playlist...</p>`
   }
 ];
 
