@@ -39,31 +39,13 @@ let currentPage = 0;
 function nextPage() {
   currentPage++;
   renderPage();
-  setTimeout(() => {
-    const audio = document.querySelector("audio");
-    if (audio) audio.play().catch(() => {});
-  }, 300);
-}
-
-function prevPage() {
-  if (currentPage > 0) {
-    currentPage--;
-    renderPage();
-    setTimeout(() => {
-      const audio = document.querySelector("audio");
-      if (audio) audio.play().catch(() => {});
-    }, 300);
-  }
 }
 
 function renderPage() {
   const { bg, html, music } = pages[currentPage];
   document.body.style.backgroundImage = `url(${bg})`;
-  let audioTag = music ? `<audio controls><source src="${music}" type="audio/mpeg"></audio>` : '';
-
-  let nextBtn = (currentPage < pages.length - 1)
-    ? `<button class='btn' onclick='nextPage()'>Próxima</button>` : '';
-
+  let audioTag = music ? `<audio autoplay controls><source src="${music}" type="audio/mpeg"></audio>` : '';
+  let nextBtn = (currentPage < pages.length - 1) ? `<button class='btn' onclick='nextPage()'>Próxima</button>` : '';
   let backBtn = (currentPage > 0)
     ? `<button class='btn' onclick='prevPage()' style='margin-right: 10px;'>Voltar</button>` : '';
 
@@ -71,3 +53,4 @@ function renderPage() {
 }
 
 renderPage();
+
