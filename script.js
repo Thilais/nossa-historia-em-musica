@@ -5,8 +5,8 @@ const pages = [
   },
   {
     bg: "https://thumbs.dreamstime.com/b/um-paraquedista-contra-fundo-do-c%C3%A9u-azul-e-nuvens-brancas-paraquedismo-com-uma-cobertura-vermelha-de-paraquedas-salto-195793805.jpg",
-    music: "musicas/paraquedas.mp3",
-    html: `<h1>Paraquedas - Cupertino</h1><p>No começo de tudo, eu nem imaginava que o teu beijo me levaria tão longe. Foi como pular no desconhecido, sem pensar duas vezes. Me joguei — e foi no teu abraço que encontrei o melhor lugar pra pousar.</p><p><em>🎵<br>Eu quero<br>Ver a luz que habita teu sorriso<br>E se te amar for precipício<br>Eu levo um paraquedas<br>Me jogo no vento<br>Te encontro no ar</em></p>`
+    music: "https://drive.google.com/uc?export=download&id=1PpJbtVwUysUWNYMPZY1ygDFHAxiakq-7",
+    html: `<h1>Paraquedas - Cupertino</h1><p>No começo de tudo, eu nem imaginava que o teu beijo me levaria tão longe. Foi como pular no desconhecido, sem pensar duas vezes. Me joguei — e foi no teu abraço que encontrei o melhor lugar pra pousar.</p><p><em>"Eu quero<br>Ver a luz que habita teu sorriso<br>E se te amar for precipício<br>Eu levo um paraquedas<br>Me jogo no vento<br>Te encontro no ar"</em></p>`
   },
   {
     bg: "https://marketplace.canva.com/EAFEhXLBpkg/1/0/1600w/canva-plano-de-fundo-para-v%C3%ADdeo-abstrato-cor-e-estilo-azul-branco--6VVWMQNYYw.jpg",
