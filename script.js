@@ -70,8 +70,10 @@ const pages = [
 let currentPage = 0;
 
 function nextPage() {
-  currentPage++;
-  renderPage();
+  if (currentPage < pages.length - 1) {
+    currentPage++;
+    renderPage();
+  }
 }
 
 function prevPage() {
@@ -83,24 +85,30 @@ function prevPage() {
 
 function renderPage() {
   const { bg, html, video } = pages[currentPage];
+
+  // Mudar fundo
   document.body.style.backgroundImage = `url(${bg})`;
 
+  // Montar player se tiver vídeo
   const videoTag = video
     ? `<video class="player" controls><source src="${video}" type="video/mp4"></video>`
     : '';
 
-  const backBtn =
-    currentPage > 0
-      ? `<button class='btn' onclick='prevPage()'>Voltar</button>`
-      : '';
+  // Botões de navegação
+  const backBtn = currentPage > 0
+    ? `<button class='btn voltar' onclick='prevPage()'>Voltar</button>`
+    : '';
 
-  const nextBtn =
-    currentPage < pages.length - 1
-      ? `<button class='btn' onclick='nextPage()'>Próxima</button>`
-      : '';
+  const nextBtn = currentPage < pages.length - 1
+    ? `<button class='btn' onclick='nextPage()'>Próxima</button>`
+    : '';
 
+  // Atualizar conteúdo
   document.getElementById('page').innerHTML =
     html + videoTag + `<div class='nav'>${backBtn}${nextBtn}</div>`;
+
+  // Scroll para o topo do contêiner
+  document.getElementById('page').scrollTop = 0;
 }
 
 renderPage();
