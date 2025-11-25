@@ -72,3 +72,5 @@ audio {
   gap: 10px;
   justify-content: center;
 }
+
+<div id="page" class="content"></div>
