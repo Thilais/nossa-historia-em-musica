@@ -68,3 +68,43 @@ const pages = [
     A última música começa quando estivermos juntas.</p>`
   }
 ];
+
+
+let currentPage = 0;
+
+function nextPage() {
+  currentPage++;
+  renderPage();
+}
+
+function prevPage() {
+  if (currentPage > 0) {
+    currentPage--;
+    renderPage();
+  }
+}
+
+function renderPage() {
+  const { bg, html, video } = pages[currentPage];
+  
+  document.body.style.backgroundImage = `url(${bg})`;
+
+  const videoTag = video
+    ? `<video class="player" controls><source src="${video}" type="video/mp4"></video>`
+    : '';
+  
+  const backBtn =
+    currentPage > 0
+      ? `<button class='btn' onclick='prevPage()'>Voltar</button>`
+      : '';
+
+  const nextBtn =
+    currentPage < pages.length - 1
+      ? `<button class='btn' onclick='nextPage()'>Próxima</button>`
+      : '';
+
+  document.getElementById('page').innerHTML =
+    html + videoTag + `<div class='nav'>${backBtn}${nextBtn}</div>`;
+}
+
+renderPage();
