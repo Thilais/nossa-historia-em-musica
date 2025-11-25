@@ -11,21 +11,20 @@ const pages = [
     bg: "https://thumbs.dreamstime.com/b/um-paraquedista-contra-fundo-do-c%C3%A9u-azul-e-nuvens-brancas-paraquedismo-com-uma-cobertura-vermelha-de-paraquedas-salto-195793805.jpg",
     video: "musicas/paraquedas.mp4",
     html: `<h1>Paraquedas - Cupertino</h1>
-    <p>“Mil pés... Teu beijo me levou quase pro céu”<br><br>
-    “Eu quero ter a chance de te ver de novo...<br>
+    <p>“Mil pés... Teu beijo me levou quase pro céu”</p>
+    <p>“Eu quero ter a chance de te ver de novo...<br>
     ...eu levo um paraquedas, me jogo no vento, te encontro no ar”</p>
     <p>Nosso amor pareceu caminhar perto de um precipício por um tempo...<br>
     Mas: Se te amar for um precipício, preocupa não...<br>
-    porque, respondendo sua pergunta de um tempo atrás,<br>
-    a gente já tem paraquedas.</p>`
+    porque, respondendo sua pergunta de um tempo atrás, a gente já tem paraquedas.</p>`
   },
   {
     bg: "https://marketplace.canva.com/EAFEhXLBpkg/1/0/1600w/canva-plano-de-fundo-para-v%C3%ADdeo-abstrato-cor-e-estilo-azul-branco--6VVWMQNYYw.jpg",
     video: "musicas/azul.mp4",
     html: `<h1>Azul - Melly</h1>
     <p>“Tudo azul, eu e você<br>
-    Chega mais perto pra tu ver”<br><br>
-    “sei que cê sente o que eu tô sentindo...<br>
+    Chega mais perto pra tu ver”</p>
+    <p>“sei que cê sente o que eu tô sentindo...<br>
     Mandou mensagem, não sei porque eu to sorrindo”</p>
     <p>A música já diz por si só: troca de olhares, tudo azul, chegou mais perto…<br>
     e o restante, a gente sabe..</p>`
@@ -37,8 +36,7 @@ const pages = [
     <p>“Já disse em outro som, igual não tem<br>
     Sabe me levar de zero a cem...<br>
     Ela me chama, entro na dança”</p>
-    <p>Então né... Zero a cem...<br>
-    É isso.<br>
+    <p>Então né... Zero a cem... É isso.<br>
     É a gente, e essa nossa intensidade.</p>
     <p>“Esse teu sorriso é sempre um leva e traz...<br>
     E se tu quiser fica um pouco mais”</p>`
@@ -69,7 +67,6 @@ const pages = [
   }
 ];
 
-
 let currentPage = 0;
 
 function nextPage() {
@@ -86,13 +83,12 @@ function prevPage() {
 
 function renderPage() {
   const { bg, html, video } = pages[currentPage];
-  
   document.body.style.backgroundImage = `url(${bg})`;
 
   const videoTag = video
     ? `<video class="player" controls><source src="${video}" type="video/mp4"></video>`
     : '';
-  
+
   const backBtn =
     currentPage > 0
       ? `<button class='btn' onclick='prevPage()'>Voltar</button>`
